@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Finiquito e Indemnización 2026 | España (Actualizada)</title>
+    <meta name="description" content="Calcula gratis tu finiquito e indemnización por despido según la ley en España. Incluye vacaciones pendientes, pagas extra y tipos de despido. Rápido y 100% privado.">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Encabezado / Navegación -->
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo">
+                <span class="logo-icon">⚖️</span>
+                <span class="logo-text">CalculaTu<strong>Finiquito</strong>.es</span>
+            </div>
+            <nav class="nav">
+                <a href="#calculadora" class="nav-link">Calculadora</a>
+                <a href="#guia-legal" class="nav-link">Guía Legal</a>
+                <a href="#preguntas-frecuentes" class="nav-link">Dudas Frecuentes</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Espacio Publicitario Superior (AdSense) -->
+    <div class="container ad-banner-top">
+        <div class="ad-placeholder">
+            <span class="ad-badge">Anuncio</span>
+            <p>Espacio reservado para Google AdSense (Banner Superior 728x90 / Adaptable)</p>
+        </div>
+    </div>
+
+    <!-- Contenido Principal -->
+    <main class="container main-layout">
+        <!-- Sección de la Calculadora -->
+        <section id="calculadora" class="calc-section">
+            <div class="section-intro">
+                <h1>Calculadora de Finiquito e Indemnización en España</h1>
+                <p class="subtitle">Calcula en segundos el importe exacto que te corresponde por ley al finalizar tu contrato laboral. Datos actualizados según el Estatuto de los Trabajadores.</p>
+            </div>
+
+            <div class="calculator-card">
+                <form id="finiquito-form" class="calc-form">
+                    
+                    <div class="form-grid">
+                        <!-- Salario Bruto Mensual -->
+                        <div class="form-group">
+                            <label for="salario">Salario Bruto Mensual (€) <span class="required">*</span></label>
+                            <div class="input-prefix-wrapper">
+                                <span class="input-prefix">€</span>
+                                <input type="number" id="salario" placeholder="Ej: 1500" min="0" step="0.01" required>
+                            </div>
+                            <span class="helper-text">Aparece en la parte superior de tu nómina como Total Devengado.</span>
+                        </div>
+
+                        <!-- Número de Pagas -->
+                        <div class="form-group">
+                            <label for="num-pagas">Número de Pagas Anuales <span class="required">*</span></label>
+                            <select id="num-pagas" required>
+                                <option value="12">12 pagas (Prorrateadas en cada nómina)</option>
+                                <option value="14" selected>14 pagas (Paga extra de Verano y Navidad)</option>
+                            </select>
+                            <span class="helper-text">Si cobras pagas extra aparte en verano y navidad, elige 14 pagas.</span>
+                        </div>
+
+                        <!-- Fecha de Inicio -->
+                        <div class="form-group">
+                            <label for="fecha-inicio">Fecha de Inicio en la Empresa <span class="required">*</span></label>
+                            <input type="date" id="fecha-inicio" required>
+                            <span class="helper-text">Día exacto en que firmaste tu contrato.</span>
+                        </div>
+
+                        <!-- Fecha de Finalización -->
+                        <div class="form-group">
+                            <label for="fecha-fin">Fecha de Fin de Contrato <span class="required">*</span></label>
+                            <input type="date" id="fecha-fin" required>
+                            <span class="helper-text">Último día efectivo trabajado en la empresa.</span>
+                        </div>
+
+                        <!-- Motivo de la Salida / Despido -->
+                        <div class="form-group full-width">
+                            <label for="tipo-cese">Causa de Finalización del Contrato <span class="required">*</span></label>
+                            <select id="tipo-cese" required>
+                                <option value="improcedente">Despido Improcedente (33 días/año trabajado)</option>
+                                <option value="objetivo">Despido Objetivo / Causas Económicas (20 días/año trabajado)</option>
+                                <option value="temporal">Fin de Contrato Temporal / Obra (12 días/año)</option>
+                                <option value="baja_voluntaria">Baja Voluntaria / Dimisión (0 días de indemnización)</option>
+                                <option value="periodo_prueba">No superación del Periodo de Prueba (0 días)</option>
+                                <option value="disciplinario">Despido Disciplinario procedente (0 días)</option>
+                            </select>
+                            <span class="helper-text">El tipo de cese determina si tienes derecho a indemnización y cuántos días por año.</span>
+                        </div>
+
+                        <!-- Vacaciones pendientes -->
+                        <div class="form-group">
+                            <label for="vacaciones-pendientes">Días de vacaciones pendientes disfrutados este año</label>
+                            <input type="number" id="vacaciones-disfrutadas" placeholder="0" min="0" max="31" value="0">
+                            <span class="helper-text">Días de vacaciones que YA has disfrutado este año natural.</span>
+                        </div>
+
+                        <!-- Días trabajados mes en curso -->
+                        <div class="form-group">
+                            <label for="dias-preaviso">¿La empresa te dio 15 días de preaviso?</label>
+                            <select id="preaviso">
+                                <option value="si">Sí, o no era obligatorio (ej. baja voluntaria con preaviso)</option>
+                                <option value="no">No, me avisaron el mismo día (Tienen que pagarte los 15 días)</option>
+                            </select>
+                            <span class="helper-text">En despidos objetivos deben dar 15 días de preaviso o abonarlos.</span>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn-calculate" id="btn-calcular">
+                            <span>Calcular Mi Finiquito Ahora</span> ⚡
+                        </button>
+                    </div>
+                </form>
+
+                <!-- Panel de Resultados (Oculto al inicio) -->
+                <div id="resultado-panel" class="result-panel" style="display: none;">
+                    <div class="result-header">
+                        <h2>Desglose de tu Liquidación</h2>
+                        <span class="result-badge">Cálculo Estimado Bruto</span>
+                    </div>
+
+                    <div class="total-box">
+                        <span class="total-label">Total Finiquito + Indemnización</span>
+                        <span class="total-amount" id="res-total">0,00 €</span>
+                        <span class="total-subtext">Importe total bruto antes de retenciones de IRPF y Seguridad Social</span>
+                    </div>
+
+                    <div class="breakdown-grid">
+                        <div class="breakdown-card">
+                            <div class="card-icon">💰</div>
+                            <div class="card-info">
+                                <span class="card-title">Indemnización por Despido</span>
+                                <span class="card-amount" id="res-indemnizacion">0,00 €</span>
+                                <span class="card-desc" id="res-indemnizacion-dias">0 días de indemnización</span>
+                            </div>
+                        </div>
+
+                        <div class="breakdown-card">
+                            <div class="card-icon">📅</div>
+                            <div class="card-info">
+                                <span class="card-title">Días Trabajados (Mes Actual)</span>
+                                <span class="card-amount" id="res-dias-mes">0,00 €</span>
+                                <span class="card-desc" id="res-dias-mes-dias">Días de salario devengados</span>
+                            </div>
+                        </div>
+
+                        <div class="breakdown-card">
+                            <div class="card-icon">🏖️</div>
+                            <div class="card-info">
+                                <span class="card-title">Vacaciones No Disfrutadas</span>
+                                <span class="card-amount" id="res-vacaciones">0,00 €</span>
+                                <span class="card-desc" id="res-vacaciones-dias">Días devengados pendientes</span>
+                            </div>
+                        </div>
+
+                        <div class="breakdown-card">
+                            <div class="card-icon">🎁</div>
+                            <div class="card-info">
+                                <span class="card-title">Pagas Extra Pendientes</span>
+                                <span class="card-amount" id="res-pagas">0,00 €</span>
+                                <span class="card-desc" id="res-pagas-desc">Parte proporcional generada</span>
+                            </div>
+                        </div>
+
+                        <div class="breakdown-card" id="card-preaviso-container" style="display: none;">
+                            <div class="card-icon">⚠️</div>
+                            <div class="card-info">
+                                <span class="card-title">Falta de Preaviso</span>
+                                <span class="card-amount" id="res-preaviso">0,00 €</span>
+                                <span class="card-desc">15 días de salario por falta de preaviso</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="advice-box">
+                        <p><strong>💡 Consejo de oro de abogados laboralistas:</strong> Cuando la empresa te dé el documento del finiquito para firmar, firma siempre poniendo a mano: <strong>"NO CONFORME"</strong> y la <strong>fecha real</strong> en la que te entregan el papel. Esto no te impide cobrar el dinero en el banco y te permite reclamar judicialmente si falta dinero.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Espacio Publicitario Intermedio (AdSense) -->
+        <div class="ad-banner-middle">
+            <div class="ad-placeholder">
+                <span class="ad-badge">Anuncio</span>
+                <p>Espacio para Google AdSense (Bloque Responsivo en Contenido)</p>
+            </div>
+        </div>
+
+        <!-- Contenido Educativo SEO y Explicación Legal -->
+        <article id="guia-legal" class="seo-article">
+            <h2>¿Cómo se calcula el finiquito y la indemnización en España?</h2>
+            <p>Muchas personas confunden el <strong>finiquito</strong> con la <strong>indemnización</strong>, pero jurídicamente son dos conceptos totalmente distintos según el <strong>Estatuto de los Trabajadores</strong>.</p>
+
+            <div class="differences-grid">
+                <div class="diff-card">
+                    <h3>1. El Finiquito (Siempre te corresponde)</h3>
+                    <p>El finiquito es la <strong>liquidación de las cantidades que la empresa te debe</strong> por el trabajo que ya has realizado hasta tu último día. Tienes derecho al finiquito <strong>siempre</strong>, sin importar si te han despedido, se te ha acabado el contrato temporal o te has ido tú voluntariamente (baja voluntaria).</p>
+                    <ul>
+                        <li><strong>Días del mes trabajados:</strong> Los días trabajados en el mes en curso antes de tu salida.</li>
+                        <li><strong>Vacaciones no disfrutadas:</strong> Por cada mes trabajado en el año natural te corresponden <strong>2,5 días de vacaciones</strong>. Si te vas en junio y has generado 15 días pero solo has gastado 5, la empresa está obligada a pagarte los 10 días restantes en dinero.</li>
+                        <li><strong>Pagas extraordinarias pendientes:</strong> Si en tu nómina no tienes las pagas prorrateadas mes a mes, te deben la parte proporcional de la paga de Navidad y/o la de Verano.</li>
+                    </ul>
+                </div>
+
+                <div class="diff-card">
+                    <h3>2. La Indemnización (Solo según el despido)</h3>
+                    <p>Es una compensación económica por la pérdida involuntaria de tu puesto de trabajo. Solo se cobra en despidos o finalizaciones de contrato involuntarias:</p>
+                    <ul>
+                        <li><strong>Despido Improcedente:</strong> 33 días de salario por año trabajado, con un tope máximo de 24 mensualidades (para contratos firmados después de febrero de 2012).</li>
+                        <li><strong>Despido Objetivo / Causas Económicas / ERE:</strong> 20 días de salario por año trabajado, con un tope de 12 mensualidades.</li>
+                        <li><strong>Fin de Contrato Temporal o de Obra:</strong> 12 días de salario por cada año trabajado.</li>
+                        <li><strong>Baja Voluntaria o Despido Disciplinario:</strong> 0 días de indemnización.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Sección de Preguntas Frecuentes (FAQ para Rich Snippets en Google) -->
+            <section id="preguntas-frecuentes" class="faq-section">
+                <h2>Preguntas Frecuentes sobre Finiquitos y Despidos</h2>
+
+                <div class="faq-item">
+                    <h3>¿Tengo que pagar impuestos por el finiquito y la indemnización?</h3>
+                    <p>La <strong>indemnización por despido está totalmente exenta de IRPF</strong> hasta el límite legal establecido por el Estatuto de los Trabajadores (con un máximo de 180.000 €). En cambio, el resto del finiquito (salarios pendientes, vacaciones pagadas y pagas extra) sí tributa en el IRPF y cotiza a la Seguridad Social como cualquier otra nómina.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>¿Qué pasa si mi empresa no me paga el finiquito a tiempo?</h3>
+                    <p>La empresa debe poner a tu disposición el finiquito el mismo día en que cesa tu relación laboral. Si no te pagan, tienes un plazo de <strong>1 año</strong> para reclamar las cantidades adeudadas. Además, la ley contempla un recargo del <strong>10% por mora</strong> en el pago de salarios atrasados.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>¿Cuánto tiempo tengo para impugnar un despido si no estoy de acuerdo?</h3>
+                    <p>Tienes exactamente <strong>20 días hábiles</strong> (sin contar sábados, domingos ni festivos) desde el día siguiente a la fecha de efectos del despido para presentar una <strong>Papeleta de Conciliación</strong> ante el Servicio de Mediación, Arbitraje y Conciliación (SMAC) de tu comunidad autónoma.</p>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <!-- Espacio Publicitario Inferior (AdSense) -->
+    <div class="container ad-banner-bottom">
+        <div class="ad-placeholder">
+            <span class="ad-badge">Anuncio</span>
+            <p>Espacio reservado para Google AdSense (Banner Inferior)</p>
+        </div>
+    </div>
+
+    <!-- Pie de Página -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-col">
+                <span class="logo-text">CalculaTu<strong>Finiquito</strong>.es</span>
+                <p>Herramienta gratuita para trabajadores y profesionales en España. Actualizada según la legislación laboral vigente.</p>
+            </div>
+            <div class="footer-links">
+                <a href="aviso-legal.html">Aviso Legal</a>
+                <a href="privacidad.html">Política de Privacidad</a>
+                <a href="cookies.html">Política de Cookies</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 CalculaTuFiniquito.es - Todos los derechos reservados. Esta calculadora es meramente informativa y no constituye asesoramiento legal formal.</p>
+        </div>
+    </footer>
+
+    <!-- Banner Flotante de Consentimiento de Cookies (Requisito AdSense y RGPD) -->
+    <div id="cookie-banner" class="cookie-banner">
+        <div class="cookie-content">
+            <p>🍪 Utilizamos cookies técnicas y analíticas para ofrecerte la mejor experiencia y mostrar anuncios relevantes con Google AdSense. Al continuar navegando, aceptas nuestra <a href="cookies.html">política de cookies</a>.</p>
+            <div class="cookie-actions">
+                <button id="accept-cookies" class="btn-cookie-accept">Aceptar todas</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script de la Lógica -->
+    <script src="app.js"></script>
+</body>
+</html>
