@@ -27,13 +27,7 @@
         </div>
     </header>
 
-    <!-- Espacio Publicitario Superior (AdSense) -->
-    <div class="container ad-banner-top">
-        <div class="ad-placeholder">
-            <span class="ad-badge">Anuncio</span>
-            <p>Espacio reservado para Google AdSense (Banner Superior 728x90 / Adaptable)</p>
-        </div>
-    </div>
+
 
     <!-- Contenido Principal -->
     <main class="container main-layout">
@@ -184,17 +178,16 @@
                     <div class="advice-box">
                         <p><strong>💡 Consejo de oro de abogados laboralistas:</strong> Cuando la empresa te dé el documento del finiquito para firmar, firma siempre poniendo a mano: <strong>"NO CONFORME"</strong> y la <strong>fecha real</strong> en la que te entregan el papel. Esto no te impide cobrar el dinero en el banco y te permite reclamar judicialmente si falta dinero.</p>
                     </div>
+
+                    <div class="pdf-action-wrapper">
+                        <button type="button" id="btn-descargar-pdf" class="btn-pdf">
+                            <span>📥 Descargar Informe / Finiquito en PDF (Gratis)</span>
+                        </button>
+                        <span class="pdf-note">Genera un documento PDF formal con todo el desglose listo para imprimir o guardar.</span>
+                    </div>
                 </div>
             </div>
         </section>
-
-        <!-- Espacio Publicitario Intermedio (AdSense) -->
-        <div class="ad-banner-middle">
-            <div class="ad-placeholder">
-                <span class="ad-badge">Anuncio</span>
-                <p>Espacio para Google AdSense (Bloque Responsivo en Contenido)</p>
-            </div>
-        </div>
 
         <!-- Contenido Educativo SEO y Explicación Legal -->
         <article id="guia-legal" class="seo-article">
@@ -246,14 +239,6 @@
         </article>
     </main>
 
-    <!-- Espacio Publicitario Inferior (AdSense) -->
-    <div class="container ad-banner-bottom">
-        <div class="ad-placeholder">
-            <span class="ad-badge">Anuncio</span>
-            <p>Espacio reservado para Google AdSense (Banner Inferior)</p>
-        </div>
-    </div>
-
     <!-- Pie de Página -->
     <footer class="footer">
         <div class="container footer-container">
@@ -282,6 +267,8 @@
         </div>
     </div>
 
+    <!-- Librería para generar PDF desde el navegador -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <!-- Script de la Lógica -->
     <script src="app.js"></script>
 </body>

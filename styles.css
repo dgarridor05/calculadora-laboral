@@ -390,6 +390,42 @@ select:focus {
     font-size: 0.95rem;
 }
 
+.pdf-action-wrapper {
+    margin-top: 25px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-pdf {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: #ffffff;
+    border: 1px solid #334155;
+    padding: 14px 28px;
+    border-radius: var(--radius-md);
+    font-size: 1.05rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-pdf:hover {
+    background: #1e293b;
+    border-color: #475569;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.pdf-note {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
 /* Artículo SEO y Guía Legal */
 .seo-article {
     background-color: var(--bg-card);
@@ -624,5 +660,61 @@ select:focus {
 
     .total-amount {
         font-size: 2.2rem;
+    }
+}
+
+/* Modo Impresión / Generación PDF Limpio */
+@media print {
+    .header,
+    .nav,
+    .ad-banner-top,
+    .ad-banner-middle,
+    .ad-banner-bottom,
+    .calc-form,
+    .form-actions,
+    .advice-box,
+    .pdf-action-wrapper,
+    .seo-article,
+    .footer,
+    .cookie-banner {
+        display: none !important;
+    }
+
+    body {
+        background-color: #ffffff;
+        color: #000000;
+        font-size: 12pt;
+    }
+
+    .container {
+        max-width: 100%;
+        padding: 0;
+    }
+
+    .calculator-card {
+        border: none;
+        box-shadow: none;
+        padding: 0;
+    }
+
+    .result-panel {
+        display: block !important;
+        border-top: none;
+        padding-top: 0;
+    }
+
+    .total-box {
+        background: #f1f5f9 !important;
+        color: #0f172a !important;
+        border: 2px solid #cbd5e1;
+    }
+
+    .total-amount {
+        color: #059669 !important;
+    }
+
+    .breakdown-card {
+        border: 1px solid #cbd5e1;
+        background: #ffffff !important;
     }
 }
